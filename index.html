@@ -9,6 +9,10 @@
     <title>Апартаменты у моря - Мерсин | Сдам напрямую</title>
     <link rel="icon" type="img/svg+xml" href="img/favicon.svg" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css"
+    />
     <!-- Yandex Maps API (легкая версия) -->
     <script
       src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU"
@@ -409,12 +413,25 @@
                   placeholder="+7 918 000-00-00"
                 />
               </div>
+              <!-- ✅ стало — два календарика -->
               <div class="form-group">
-                <label>Желаемые даты заезда и выезда</label>
+                <label>Дата заезда</label>
                 <input
                   type="text"
-                  name="Даты"
-                  placeholder="например: с 15 мая по 22 мая"
+                  id="date-in"
+                  name="Дата заезда"
+                  placeholder="Выберите дату"
+                  readonly
+                />
+              </div>
+              <div class="form-group">
+                <label>Дата выезда</label>
+                <input
+                  type="text"
+                  id="date-out"
+                  name="Дата выезда"
+                  placeholder="Выберите дату"
+                  readonly
                 />
               </div>
               <div class="form-group">
@@ -593,6 +610,24 @@
       }
     </script>
 
-    <!-- Если Яндекс.Карты не нужны — удалите блок с id="map" и скрипт выше -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/ru.js"></script>
+    <script>
+      const dateIn = flatpickr("#date-in", {
+        locale: "ru",
+        minDate: "today",
+        dateFormat: "d.m.Y",
+        onChange: function (selectedDates) {
+          // дата выезда не раньше заезда
+          dateOut.set("minDate", selectedDates[0]);
+        },
+      });
+
+      const dateOut = flatpickr("#date-out", {
+        locale: "ru",
+        minDate: "today",
+        dateFormat: "d.m.Y",
+      });
+    </script>
   </body>
 </html>
