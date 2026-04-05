@@ -52,6 +52,11 @@ h1 {
   opacity: 0.9;
 }
 
+.subhead--small {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
 /* Секции */
 section {
   padding: 50px 0;
@@ -97,7 +102,27 @@ section {
   transform: scale(1.02);
 }
 
-/* Характеристики */
+.gallery-info {
+  text-align: center;
+  margin-top: 15px;
+  color: #4a627a;
+}
+
+.gallery-info-btn {
+  font-weight: bold;
+  text-decoration: none;
+}
+.gallery-info-btn.color-whatsapp {
+  background: none;
+  color: #25d366;
+}
+
+.gallery-info-btn.color-telegram {
+  background: none;
+  color: #229ed9;
+}
+
+/* Удобства */
 .features-grid {
   display: flex;
   flex-wrap: wrap;
@@ -126,7 +151,6 @@ section {
   margin-bottom: 12px;
 }
 
-/* Цена и преимущества */
 .price-box {
   background: linear-gradient(120deg, #ffffff, #f1f5f9);
   border-radius: 40px;
@@ -134,6 +158,23 @@ section {
   text-align: center;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
   border: 1px solid #e2e8f0;
+}
+
+.price-box__title {
+  margin-bottom: 15px;
+}
+
+.price-box__rules {
+  margin-top: 15px;
+}
+
+.price-box__amount {
+  margin: 25px 0 10px;
+}
+
+.price-box__discount {
+  font-size: 0.9rem;
+  margin-top: 6px;
 }
 
 .price {
@@ -147,6 +188,7 @@ section {
   font-weight: normal;
 }
 
+/* Кнопки */
 .btn {
   display: inline-block;
   background: #f4c542;
@@ -163,8 +205,29 @@ section {
 }
 
 .btn:hover {
-  background: #e0b03b;
+  opacity: 0.9;
   transform: scale(1.02);
+}
+
+.btn--small {
+  margin-top: 0;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Цвета мессенджеров — используются везде */
+
+/* Кнопки аванса */
+.price-booking {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
 }
 
 /* Карта */
@@ -174,6 +237,17 @@ section {
   border-radius: 30px;
   margin-top: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.map-description {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.map-note {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.85rem;
 }
 
 /* Форма */
@@ -219,7 +293,13 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.2);
 }
 
-/* Flatpickr — стили календарика */
+.form-note {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Flatpickr */
 .flatpickr-calendar {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
@@ -242,7 +322,7 @@ textarea:focus {
   background: rgba(244, 197, 66, 0.15);
 }
 
-/* Видео — адаптивное 16:9 */
+/* Видео */
 .video {
   padding: 50px 0;
 }
@@ -274,6 +354,74 @@ textarea:focus {
   font-size: 0.9rem;
 }
 
+.footer__contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1b4e72;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.footer-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.color-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.color-telegram {
+  background: #229ed9;
+  color: #fff;
+}
+
+.color-whatsapp:hover,
+.color-telegram:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.footer__copy {
+  margin-top: 15px;
+  font-size: 0.8rem;
+}
+
+.spasibo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.spasibo img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px;
+}
+.spasibo-page {
+  text-align: center;
+  padding: 60px 20px;
+}
+.text-accent {
+  font-size: 46px;
+  color: #c9390d;
+}
 /* Адаптив */
 @media (max-width: 768px) {
   h1 {
