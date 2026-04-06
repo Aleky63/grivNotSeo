@@ -35,3 +35,11 @@ const dateOut = flatpickr("#date-out", {
   minDate: "today",
   dateFormat: "d.m.Y",
 });
+
+const phone = document.getElementById("phone");
+
+phone.addEventListener("input", function () {
+  if (!this.value.startsWith("+")) {
+    this.value = "+" + this.value.replace(/\+/g, "");
+  }
+});
