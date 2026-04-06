@@ -22,7 +22,6 @@ body {
   padding: 0 20px;
 }
 
-/* Шапка */
 header {
   background: linear-gradient(135deg, #0b3b5f, #1b4e72);
   color: white;
@@ -56,8 +55,29 @@ h1 {
   font-size: 1rem;
   margin-top: 10px;
 }
+.video {
+  padding: 20px 0;
+}
 
-/* Секции */
+.video__wrapper {
+  position: relative;
+  padding-bottom: 40%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.video__play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 section {
   padding: 50px 0;
   border-bottom: 1px solid #e2e8f0;
@@ -81,7 +101,6 @@ section {
   border-radius: 3px;
 }
 
-/* Галерея */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -122,7 +141,6 @@ section {
   color: #229ed9;
 }
 
-/* Удобства */
 .features-grid {
   display: flex;
   flex-wrap: wrap;
@@ -188,7 +206,6 @@ section {
   font-weight: normal;
 }
 
-/* Кнопки */
 .btn {
   display: inline-block;
   background: #f4c542;
@@ -219,9 +236,6 @@ section {
   width: 100%;
 }
 
-/* Цвета мессенджеров — используются везде */
-
-/* Кнопки аванса */
 .price-booking {
   display: flex;
   gap: 10px;
@@ -230,7 +244,6 @@ section {
   margin-top: 12px;
 }
 
-/* Карта */
 #map {
   width: 100%;
   height: 400px;
@@ -250,7 +263,6 @@ section {
   font-size: 0.85rem;
 }
 
-/* Форма */
 .contact-form {
   background: white;
   border-radius: 40px;
@@ -322,30 +334,6 @@ textarea:focus {
   background: rgba(244, 197, 66, 0.15);
 }
 
-/* Видео */
-.video {
-  padding: 50px 0;
-}
-
-.video__wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.video__play {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Футер */
 .footer {
   background: #0f2c3b;
   color: #cddfe7;
@@ -422,7 +410,7 @@ textarea:focus {
   font-size: 46px;
   color: #c9390d;
 }
-/* Адаптив */
+
 @media (max-width: 768px) {
   h1 {
     font-size: 1.8rem;
