@@ -311,7 +311,17 @@ textarea:focus {
   margin-top: 15px;
 }
 
-/* Flatpickr */
+.error-text {
+  display: none;
+  color: #e11d48;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.input-error {
+  border-color: #e11d48 !important;
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
 .flatpickr-calendar {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);

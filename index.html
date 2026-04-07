@@ -33,7 +33,6 @@
         <div class="subhead">
           ✨ До пляжа 3 минуты • Бассейн • Wi-Fi • Кондиционеры ✨
         </div>
-
         <div class="subhead subhead--small">
           Жилой комплекс «Мы Лусские здесь друг друга не обманываем»
         </div>
@@ -41,6 +40,7 @@
     </header>
 
     <main>
+      <!-- ВИДЕО -->
       <section class="video">
         <div class="container">
           <div class="video__wrapper">
@@ -51,7 +51,6 @@
               allowfullscreen
             ></iframe>
           </div>
-
           <div class="video__wrapper">
             <iframe
               class="video__play"
@@ -62,6 +61,8 @@
           </div>
         </div>
       </section>
+
+      <!-- ГАЛЕРЕЯ -->
       <section>
         <div class="container">
           <h2 class="section-title">📸 Фотографии хаты</h2>
@@ -79,14 +80,14 @@
           <p class="gallery-info">
             🖼️ Реальные фото — запросите видео-прогулку:
             <a
-              href="https://wa.me/79182752625?text=Здравствуйте!%20Хочу%20запросить%20видео-прогулку%20по%20квартире%20%20"
+              href="https://wa.me/79182752625?text=Здравствуйте!%20Хочу%20запросить%20видео-прогулку%20по%20квартире"
               target="_blank"
               class="gallery-info-btn color-whatsapp"
               >WhatsApp</a
             >
             или
             <a
-              href="https://t.me/+79182752625?text=Здравствуйте!%20Хочу%20запросить%20видео-прогулку%20по%20квартире`"
+              href="https://t.me/+79182752625?text=Здравствуйте!%20Хочу%20запросить%20видео-прогулку%20по%20квартире"
               target="_blank"
               class="gallery-info-btn color-telegram"
               >Telegram</a
@@ -95,6 +96,7 @@
         </div>
       </section>
 
+      <!-- УДОБСТВА -->
       <section>
         <div class="container">
           <h2 class="section-title">✅ В квартире есть всё для отдыха</h2>
@@ -135,6 +137,7 @@
         </div>
       </section>
 
+      <!-- ЦЕНА -->
       <section>
         <div class="container">
           <div class="price-box">
@@ -161,13 +164,13 @@
             <a href="#booking" class="btn">📅 ЗАБРОНИРОВАТЬ ДАТЫ</a>
             <div class="price-booking">
               <a
-                href="https://wa.me/79182752625?text=Хочу%20внести%20аванс%20за%20бронирование%20%20"
+                href="https://wa.me/79182752625?text=Хочу%20внести%20аванс%20за%20бронирование"
                 target="_blank"
                 class="btn btn--small color-whatsapp"
                 >💳 Аванс в WhatsApp</a
               >
               <a
-                href="https://t.me/+79182752625?text=Хочу%20внести%20аванс%20за%20бронирование`"
+                href="https://t.me/+79182752625?text=Хочу%20внести%20аванс%20за%20бронирование"
                 target="_blank"
                 class="btn btn--small color-telegram"
                 >💳 Аванс в Telegram</a
@@ -177,12 +180,13 @@
         </div>
       </section>
 
+      <!-- КАРТА -->
       <section>
         <div class="container">
           <h2 class="section-title">📍 Где мы находимся</h2>
           <p class="map-description">
-            <strong>Район "ШпиЁнов в НАТО"</strong> —20 минут ползком до воды, 3
-            минуты пешком до пляжа, 45 минут от аэропорта Мерсина. Рядом
+            <strong>Район "ШпиЁнов в НАТО"</strong> — 20 минут ползком до воды,
+            3 минуты пешком до пляжа, 45 минут от аэропорта Мерсина. Рядом
             дайвинг-центр, аквапарк, кафе где ДРАКУ можно заказать.
           </p>
           <div id="map"></div>
@@ -193,6 +197,7 @@
         </div>
       </section>
 
+      <!-- ФОРМА -->
       <section id="booking">
         <div class="container">
           <h2 class="section-title">
@@ -217,11 +222,12 @@
                   type="text"
                   name="Имя"
                   required
-                  placeholder="Даздрапут "
+                  placeholder="Даздрапут"
                 />
               </div>
               <div class="form-group">
                 <label>Телефон (WhatsApp/Telegram)</label>
+
                 <input
                   type="tel"
                   name="Телефон"
@@ -231,34 +237,30 @@
                 />
               </div>
               <div class="form-group">
-                <label>Дата заезда</label>
+                <label>Даты проживания</label>
                 <input
                   type="text"
                   id="date-in"
-                  name="Дата заезда"
-                  placeholder="Выберите дату"
-                  readonly
+                  name="Даты"
+                  placeholder="Выберите даты заезда и выезда"
                   required
                 />
-              </div>
-              <div class="form-group">
-                <label>Дата выезда</label>
-                <input
-                  type="text"
-                  id="date-out"
-                  name="Дата выезда"
-                  placeholder="Выберите дату"
-                  readonly
-                  required
-                />
+                <div id="date-error" class="error-text">
+                  Выберите даты заезда и выезда
+                </div>
               </div>
               <div class="form-group">
                 <label>Количество гостей</label>
                 <input
                   type="text"
+                  id="guests"
                   name="Гости"
-                  placeholder="2 взрослых + 1 ребенок"
+                  placeholder="Например: 2 взрослых"
+                  required
                 />
+                <div id="guests-error" class="error-text">
+                  Укажите количество гостей
+                </div>
               </div>
               <div class="form-group">
                 <label>Доп. пожелания / вопрос</label>
@@ -280,6 +282,7 @@
       </section>
     </main>
 
+    <!-- ФУТЕР -->
     <div class="footer">
       <div class="container">
         <p>
@@ -291,7 +294,7 @@
           <a class="footer-btn" href="tel:+79182752625">📞 +7 918 275 26 25</a>
           <a
             class="footer-btn color-whatsapp"
-            href="https://wa.me/+79182752625?text=Здравствуйте!%20%20"
+            href="https://wa.me/79182752625?text=Здравствуйте!"
             target="_blank"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -303,7 +306,7 @@
           </a>
           <a
             class="footer-btn color-telegram"
-            href="https://t.me/+79182752625?text=Здравствуйте!`"
+            href="https://t.me/+79182752625?text=Здравствуйте!"
             target="_blank"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -322,7 +325,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/ru.js"></script>
-
     <script src="script.js"></script>
   </body>
 </html>

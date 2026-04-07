@@ -1,9 +1,13 @@
+// ===========================
+// Яндекс Карта
+// ===========================
 function initYandexMap() {
   var myMap = new ymaps.Map("map", {
     center: [36.7337, 34.511093],
     zoom: 15,
     controls: ["zoomControl", "fullscreenControl"],
   });
+
   var placemark = new ymaps.Placemark(
     [36.7337, 34.511093],
     {
@@ -12,34 +16,77 @@ function initYandexMap() {
     },
     { preset: "islands#redHomeIcon" },
   );
+
   myMap.geoObjects.add(placemark);
 }
+
 if (typeof ymaps !== "undefined") {
   ymaps.ready(initYandexMap);
-} else {
-  document.getElementById("map").innerHTML =
-    '<div style="background:#e2e8f0; border-radius:30px; height:100%; display:flex; align-items:center; justify-content:center;">⚠️ Карта загружается...</div>';
 }
-// ---
 
-const dateIn = flatpickr("#date-in", {
+// ===========================
+// Flatpickr (диапазон дат)
+// ===========================
+const dateError = document.getElementById("date-error");
+
+const dateRange = flatpickr("#date-in", {
+  mode: "range",
   locale: "ru",
   minDate: "today",
   dateFormat: "d.m.Y",
-  onChange: function (selectedDates) {
-    dateOut.set("minDate", selectedDates[0]);
+  onChange: function () {
+    dateError.style.display = "none";
+    dateRange.input.classList.remove("input-error");
   },
 });
-const dateOut = flatpickr("#date-out", {
-  locale: "ru",
-  minDate: "today",
-  dateFormat: "d.m.Y",
-});
 
+// ===========================
+// Телефон
+// ===========================
 const phone = document.getElementById("phone");
 
 phone.addEventListener("input", function () {
   if (!this.value.startsWith("+")) {
     this.value = "+" + this.value.replace(/\+/g, "");
+  }
+});
+
+// ===========================
+// Гости
+// ===========================
+const guestsInput = document.getElementById("guests");
+const guestsError = document.getElementById("guests-error");
+
+guestsInput.addEventListener("input", function () {
+  guestsError.style.display = "none";
+  guestsInput.classList.remove("input-error");
+});
+
+// ===========================
+// Форма
+// ===========================
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function (e) {
+  let hasError = false;
+
+  // ❌ Даты
+  if (dateRange.selectedDates.length !== 2) {
+    dateError.style.display = "block";
+    dateRange.input.classList.add("input-error");
+    dateRange.open();
+    hasError = true;
+  }
+
+  // ❌ Гости
+  if (!guestsInput.value.trim() || !/\d/.test(guestsInput.value)) {
+    guestsError.style.display = "block";
+    guestsInput.classList.add("input-error");
+    hasError = true;
+  }
+
+  // ❌ Если есть ошибки — отмена отправки
+  if (hasError) {
+    e.preventDefault();
   }
 });
