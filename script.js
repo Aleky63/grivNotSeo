@@ -24,9 +24,6 @@ if (typeof ymaps !== "undefined") {
   ymaps.ready(initYandexMap);
 }
 
-// ===========================
-// Flatpickr (диапазон дат)
-// ===========================
 const dateError = document.getElementById("date-error");
 
 const dateRange = flatpickr("#date-in", {
@@ -40,9 +37,6 @@ const dateRange = flatpickr("#date-in", {
   },
 });
 
-// ===========================
-// Телефон
-// ===========================
 const phone = document.getElementById("phone");
 
 phone.addEventListener("input", function () {
@@ -51,9 +45,6 @@ phone.addEventListener("input", function () {
   }
 });
 
-// ===========================
-// Гости
-// ===========================
 const guestsInput = document.getElementById("guests");
 const guestsError = document.getElementById("guests-error");
 
@@ -62,15 +53,11 @@ guestsInput.addEventListener("input", function () {
   guestsInput.classList.remove("input-error");
 });
 
-// ===========================
-// Форма
-// ===========================
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function (e) {
   let hasError = false;
 
-  // ❌ Даты
   if (dateRange.selectedDates.length !== 2) {
     dateError.style.display = "block";
     dateRange.input.classList.add("input-error");
@@ -78,14 +65,12 @@ form.addEventListener("submit", function (e) {
     hasError = true;
   }
 
-  // ❌ Гости
   if (!guestsInput.value.trim() || !/\d/.test(guestsInput.value)) {
     guestsError.style.display = "block";
     guestsInput.classList.add("input-error");
     hasError = true;
   }
 
-  // ❌ Если есть ошибки — отмена отправки
   if (hasError) {
     e.preventDefault();
   }
