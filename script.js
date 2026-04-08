@@ -75,3 +75,8 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
   }
 });
+
+document.getElementById("redirectUrl").value =
+  window.location.origin +
+  window.location.pathname.replace(/[^/]*$/, "") +
+  "spasibo.html";
