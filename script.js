@@ -1,15 +1,14 @@
 // ===========================
-// Яндекс Карта
-// ===========================
+
 function initYandexMap() {
   var myMap = new ymaps.Map("map", {
-    center: [36.7337, 34.511093],
+    center: [36.674517, 34.434491],
     zoom: 15,
     controls: ["zoomControl", "fullscreenControl"],
   });
 
   var placemark = new ymaps.Placemark(
-    [36.7337, 34.511093],
+    [36.674517, 34.434491],
     {
       hintContent: "Ваши апартаменты здесь!",
       balloonContent: "ЖК Sunset Pearl, 3 минуты до пляжа",
