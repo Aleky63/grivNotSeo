@@ -101,7 +101,6 @@ body {
   margin-top: 0;
 }
 
-/* Альтернативный вариант — плавающая кнопка */
 .back-to-home {
   position: sticky;
   top: 20px;
@@ -190,7 +189,7 @@ h1 {
 
 .video__wrapper {
   position: relative;
-  padding-bottom: 40%;
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 20px;
